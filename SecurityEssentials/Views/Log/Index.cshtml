@@ -14,13 +14,14 @@
         <th>@Html.DisplayNameFor(model => model.Exception)</th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>@Html.DisplayFor(modelItem => item.Message)</td>
-        <td>@Html.DisplayFor(modelItem => item.Level)</td>
-        <td>@Html.DisplayFor(modelItem => item.TimeStamp)</td>
-        <td>@Html.DisplayFor(modelItem => item.Exception)</td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@Html.DisplayFor(modelItem => item.Message)</td>
+            <td>@Html.DisplayFor(modelItem => item.Level)</td>
+            <td>@Html.DisplayFor(modelItem => item.TimeStamp)</td>
+            <td>@Html.DisplayFor(modelItem => item.Exception)</td>
+        </tr>
+    }
 
 </table>

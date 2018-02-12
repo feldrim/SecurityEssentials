@@ -1,18 +1,20 @@
 ﻿@if (Request.IsAuthenticated)
 {
-    using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "pull-right" }))
+    using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new {id = "logoutForm", @class = "pull-right"}))
     {
         @Html.AntiForgeryToken()
         <ul class="nav navbar-nav navbar-right">
             <li role="presentation">@Html.ActionLink("Logged on as " + User.Identity.Name, "EditCurrent", "User")</li>
-            <li role="presentation"><a href="javascript:document.getElementById('logoutForm').submit()">Log off</a></li>
+            <li role="presentation">
+                <a href="javascript:document.getElementById('logoutForm').submit()">Log off</a>
+            </li>
         </ul>
     }
 }
 else
 {
     <ul class="nav navbar-nav navbar-right">
-        <li>@Html.ActionLink("Register", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
-        <li>@Html.ActionLink("Log in", "Logon", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
+        <li>@Html.ActionLink("Register", "Register", "Account", null, new {id = "registerLink"})</li>
+        <li>@Html.ActionLink("Log in", "Logon", "Account", null, new {id = "loginLink"})</li>
     </ul>
 }

@@ -4,20 +4,24 @@
     ViewBag.Active = "Admin";
 }
 <ul class="breadcrumb">
-    <li>@Html.ActionLink(string.Format("Edit User {0}", Model.UserName), "Edit", "User", new { id = Model.Id }, null)</li>
+    <li>@Html.ActionLink(string.Format("Edit User {0}", Model.UserName), "Edit", "User", new {id = Model.Id}, null)</li>
     <li class="active">Add Administrator Permission</li>
 </ul>
 
 
 <h1>Make a user a system Administrator</h1>
-<hr />
-@using (Html.BeginForm("MakeAdmin", "User", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+<hr/>
+@using (Html.BeginForm("MakeAdmin", "User", FormMethod.Post, new {@class = "form-horizontal", role = "form"}))
 {
     @Html.ValidationSummary(true)
 
     <div class="row">
-        <div class="col-md-4"><span class="labelBold">User Name</span></div>
-        <div class="col-md-4"><span id="UserName">@Html.DisplayFor(model => model.UserName)</span></div>
+        <div class="col-md-4">
+            <span class="labelBold">User Name</span>
+        </div>
+        <div class="col-md-4">
+            <span id="UserName">@Html.DisplayFor(model => model.UserName)</span>
+        </div>
     </div>
     <div class="row">
         <div class="col-md-4">&nbsp;</div>
@@ -29,7 +33,9 @@
         <div class="col-md-4">&nbsp;</div>
     </div>
     <div class="row">
-        <div class="col-md-2 col-md-offset-8"><input id="submit" type="submit" value="Confirm" class="btn btn-block btn-primary" /></div>
+        <div class="col-md-2 col-md-offset-8">
+            <input id="submit" type="submit" value="Confirm" class="btn btn-block btn-primary"/>
+        </div>
     </div>
     @Html.AntiForgeryToken()
 }

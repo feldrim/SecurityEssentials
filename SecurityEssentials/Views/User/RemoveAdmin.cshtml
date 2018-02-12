@@ -4,13 +4,13 @@
     ViewBag.Active = "Admin";
 }
 <ul class="breadcrumb">
-    <li>@Html.ActionLink(string.Format("Edit User {0}", Model.User.UserName), "Edit", "User", new { id = Model.User.Id }, null)</li>
+    <li>@Html.ActionLink(string.Format("Edit User {0}", Model.User.UserName), "Edit", "User", new {id = Model.User.Id}, null)</li>
     <li class="active">Remove Admin Permission</li>
 </ul>
 
 <h1>Remove a system Administrator</h1>
-<hr />
-@using (Html.BeginForm("RemoveAdmin", "User", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+<hr/>
+@using (Html.BeginForm("RemoveAdmin", "User", FormMethod.Post, new {@class = "form-horizontal", role = "form"}))
 {
     @Html.ValidationSummary(true)
     if (Model.IsOwnProfile)
@@ -23,8 +23,12 @@
         </div>
     }
     <div class="row">
-        <div class="col-md-4"><span class="labelBold">User Name</span></div>
-        <div class="col-md-4"><span id="UserName">@Html.DisplayFor(model => model.User.UserName)</span></div>
+        <div class="col-md-4">
+            <span class="labelBold">User Name</span>
+        </div>
+        <div class="col-md-4">
+            <span id="UserName">@Html.DisplayFor(model => model.User.UserName)</span>
+        </div>
     </div>
     <div class="row">
         <div class="col-md-12">&nbsp;</div>
@@ -36,7 +40,9 @@
         <div class="col-md-12">&nbsp;</div>
     </div>
     <div class="row">
-        <div class="col-md-2 col-md-offset-8"><input id="submit" type="submit" value="Confirm" class="btn btn-block btn-primary btn-danger" /></div>
+        <div class="col-md-2 col-md-offset-8">
+            <input id="submit" type="submit" value="Confirm" class="btn btn-block btn-primary btn-danger"/>
+        </div>
     </div>
     @Html.AntiForgeryToken()
 }

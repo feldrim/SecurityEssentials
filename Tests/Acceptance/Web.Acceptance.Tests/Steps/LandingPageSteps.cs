@@ -5,14 +5,15 @@ using TechTalk.SpecFlow;
 
 namespace SecurityEssentials.Acceptance.Tests.Steps
 {
-	[Binding]
-	public class LandingPageSteps
-	{
-		[Then(@"the following last activity message is shown: '(.*)'")]
-		public void ThenTheFollowingLastActivityMessageIsShown(string textToMatch)
-		{
-			var landingPage = ScenarioContext.Current.GetPage<LandingPage>();
-			Assert.IsTrue(landingPage.GetLastAccountActivity().Contains(textToMatch), $"Expected text '{textToMatch}' but was '{landingPage.GetLastAccountActivity()}'");
-		}
-	}
+    [Binding]
+    public class LandingPageSteps
+    {
+        [Then(@"the following last activity message is shown: '(.*)'")]
+        public void ThenTheFollowingLastActivityMessageIsShown(string textToMatch)
+        {
+            var landingPage = ScenarioContext.Current.GetPage<LandingPage>();
+            Assert.IsTrue(landingPage.GetLastAccountActivity().Contains(textToMatch),
+                $"Expected text '{textToMatch}' but was '{landingPage.GetLastAccountActivity()}'");
+        }
+    }
 }

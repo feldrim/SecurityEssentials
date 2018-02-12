@@ -2,15 +2,15 @@
 
 namespace SecurityEssentials.ViewModel
 {
-	public class RemoveRoleViewModel
-	{
-		public User User;
-		public bool IsOwnProfile;
+    public class RemoveRoleViewModel
+    {
+        public bool IsOwnProfile;
+        public User User;
 
-		public RemoveRoleViewModel(User user, bool isOwnProfile)
-		{
-			User = user;
-			IsOwnProfile = isOwnProfile;
-		}
-	}
+        public RemoveRoleViewModel(User user, bool isOwnProfile)
+        {
+            User = user;
+            IsOwnProfile = isOwnProfile;
+        }
+    }
 }

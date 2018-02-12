@@ -2,13 +2,12 @@
 
 namespace SecurityEssentials.Controllers
 {
-	public class WebPageContentController : Controller
-	{
-
-		[AllowAnonymous]
-		public ViewResult TooManyRequests()
-		{
-			return View();
-		}
-	}
+    public class WebPageContentController : Controller
+    {
+        [AllowAnonymous]
+        public ViewResult TooManyRequests()
+        {
+            return View();
+        }
+    }
 }

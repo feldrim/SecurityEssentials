@@ -9,8 +9,8 @@
 </ul>
 
 <h1>Edit User</h1>
-<hr />
-@using (Html.BeginForm("Edit", "User", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+<hr/>
+@using (Html.BeginForm("Edit", "User", FormMethod.Post, new {@class = "form-horizontal", role = "form"}))
 {
     @Html.ValidationSummary(true)
     @Html.HiddenFor(model => model.User.Id)
@@ -25,7 +25,7 @@
     {
         <div class="row">
             <div class="col-md-4">@Html.LabelFor(model => model.User.UserName)</div>
-            <div class="col-md-4">@Html.TextBoxFor(model => model.User.UserName, new { @class = "form-control" })</div>
+            <div class="col-md-4">@Html.TextBoxFor(model => model.User.UserName, new {@class = "form-control"})</div>
             <div class="col-md-4">@Html.ValidationMessageFor(model => model.User.UserName)</div>
         </div>
     }
@@ -48,7 +48,7 @@
             @Html.LabelFor(model => model.User.Title)
         </div>
         <div class="col-md-4">
-            @Html.TextBoxFor(model => model.User.Title, new { @class = "form-control" })
+            @Html.TextBoxFor(model => model.User.Title, new {@class = "form-control"})
         </div>
         <div class="col-md-4">
             @Html.ValidationMessageFor(model => model.User.Title)
@@ -62,7 +62,7 @@
             @Html.LabelFor(model => model.User.FirstName)
         </div>
         <div class="col-md-4">
-            @Html.TextBoxFor(model => model.User.FirstName, new { @class = "form-control" })
+            @Html.TextBoxFor(model => model.User.FirstName, new {@class = "form-control"})
         </div>
         <div class="col-md-4">
             @Html.ValidationMessageFor(model => model.User.FirstName)
@@ -76,7 +76,7 @@
             @Html.LabelFor(model => model.User.LastName)
         </div>
         <div class="col-md-4">
-            @Html.TextBoxFor(model => model.User.LastName, new { @class = "form-control" })
+            @Html.TextBoxFor(model => model.User.LastName, new {@class = "form-control"})
         </div>
         <div class="col-md-4">
             @Html.ValidationMessageFor(model => model.User.LastName)
@@ -90,7 +90,7 @@
             @Html.LabelFor(model => model.User.TelNoWork)
         </div>
         <div class="col-md-4">
-            @Html.TextBoxFor(model => model.User.TelNoWork, new { @class = "form-control" })
+            @Html.TextBoxFor(model => model.User.TelNoWork, new {@class = "form-control"})
         </div>
         <div class="col-md-4">
             @Html.ValidationMessageFor(model => model.User.TelNoWork)
@@ -104,7 +104,7 @@
             @Html.LabelFor(model => model.User.TelNoHome)
         </div>
         <div class="col-md-4">
-            @Html.TextBoxFor(model => model.User.TelNoHome, new { @class = "form-control" })
+            @Html.TextBoxFor(model => model.User.TelNoHome, new {@class = "form-control"})
         </div>
         <div class="col-md-4">
             @Html.ValidationMessageFor(model => model.User.TelNoHome)
@@ -118,7 +118,7 @@
             @Html.LabelFor(model => model.User.TelNoMobile)
         </div>
         <div class="col-md-4">
-            @Html.TextBoxFor(model => model.User.TelNoMobile, new { @class = "form-control" })
+            @Html.TextBoxFor(model => model.User.TelNoMobile, new {@class = "form-control"})
         </div>
         <div class="col-md-4">
             @Html.ValidationMessageFor(model => model.User.TelNoMobile)
@@ -132,7 +132,7 @@
             @Html.LabelFor(model => model.User.Town)
         </div>
         <div class="col-md-4">
-            @Html.TextBoxFor(model => model.User.Town, new { @class = "form-control" })
+            @Html.TextBoxFor(model => model.User.Town, new {@class = "form-control"})
         </div>
         <div class="col-md-4">
             @Html.ValidationMessageFor(model => model.User.Town)
@@ -146,7 +146,7 @@
             @Html.LabelFor(model => model.User.Postcode)
         </div>
         <div class="col-md-4">
-            @Html.TextBoxFor(model => model.User.Postcode, new { @class = "form-control" })
+            @Html.TextBoxFor(model => model.User.Postcode, new {@class = "form-control"})
         </div>
         <div class="col-md-4">
             @Html.ValidationMessageFor(model => model.User.Postcode)
@@ -160,7 +160,7 @@
             @Html.LabelFor(model => model.User.SkypeName)
         </div>
         <div class="col-md-4">
-            @Html.TextBoxFor(model => model.User.SkypeName, new { @class = "form-control" })
+            @Html.TextBoxFor(model => model.User.SkypeName, new {@class = "form-control"})
         </div>
         <div class="col-md-4">
             @Html.ValidationMessageFor(model => model.User.SkypeName)
@@ -205,7 +205,6 @@
         <div class="row">
             <div class="col-md-4">&nbsp;</div>
         </div>
-
     }
     else
     {
@@ -214,31 +213,33 @@
                 @Html.LabelFor(model => model.User.EmailVerified)
             </div>
             <div class="col-md-4">
-                @Html.DisplayFor(model => model.User.EmailVerified, new { @class = "form-control" })
+                @Html.DisplayFor(model => model.User.EmailVerified, new {@class = "form-control"})
             </div>
         </div>
         <div class="row">
             <div class="col-md-4">&nbsp;</div>
         </div>
-
     }
     <div class="row">
         <div class="col-md-8">&nbsp;</div>
         <div class="col-md-2">@Html.ActionLink("Cancel", "Landing", "Account")</div>
-        <div class="col-md-2"><input id="submit" type="submit" value="Save" class="btn btn-primary btn-block" /></div>
+        <div class="col-md-2">
+            <input id="submit" type="submit" value="Save" class="btn btn-primary btn-block"/>
+        </div>
     </div>
-    <hr />
-    <hr />
+    <hr/>
+    <hr/>
     if (Model.IsAccessingUserAnAdmin)
     {
         <h2>Admin Functions</h2>
         <div class="row">
             <div class="col-md-4">
-                @Html.ActionLink("Reset Password", "ResetPassword", "User", new { id = Model.User.Id }, new { id = "resetPassword" })
+                @Html.ActionLink("Reset Password", "ResetPassword", "User", new {id = Model.User.Id}, new {id = "resetPassword"})
             </div>
-            @if (!Model.IsOwnProfile) {
+            @if (!Model.IsOwnProfile)
+            {
                 <div class="col-md-4">
-                    @Html.ActionLink("Delete User", "Delete", "User", new { id = Model.User.Id }, new { id = "deleteUser" })
+                    @Html.ActionLink("Delete User", "Delete", "User", new {id = Model.User.Id}, new {id = "deleteUser"})
                 </div>
             }
         </div>
@@ -255,7 +256,7 @@
             <div class="col-md-4">
                 @if (Model.IsAccessingUserAnAdmin)
                 {
-                    @Html.ActionLink("Remove Administrator Privilege", "RemoveAdmin", "User", new { id = Model.User.Id }, new { id = "removeAdmin" })
+                    @Html.ActionLink("Remove Administrator Privilege", "RemoveAdmin", "User", new {id = Model.User.Id}, new {id = "removeAdmin"})
                 }
             </div>
         </div>
@@ -271,24 +272,28 @@
             </div>
             <div class="row">
                 <div class="col-md-4">
-                    @Html.ActionLink("Make User an Administrator", "MakeAdmin", "User", new { id = Model.User.Id }, new { id = "makeAdmin" })
+                    @Html.ActionLink("Make User an Administrator", "MakeAdmin", "User", new {id = Model.User.Id}, new {id = "makeAdmin"})
                 </div>
             </div>
         }
     }
 
     <h2>Status Information</h2>
-    <p>@Html.ActionLink("View User Logs", "Log", "User", new { id = Model.User.Id }, new { id = "log" })</p>
-    <hr />
+    <p>@Html.ActionLink("View User Logs", "Log", "User", new {id = Model.User.Id}, new {id = "log"})</p>
+    <hr/>
     <div class="row">
-        <div class="col-md-4"><span class="labelBold">Password Last Changed Date</span></div>
+        <div class="col-md-4">
+            <span class="labelBold">Password Last Changed Date</span>
+        </div>
         <div class="col-md-4">@Model.User.PasswordLastChangedDateUtc.ToLocalTime()</div>
     </div>
     <div class="row">
         <div class="col-md-4">&nbsp;</div>
     </div>
     <div class="row">
-        <div class="col-md-4"><span class="labelBold">Created Date</span></div>
+        <div class="col-md-4">
+            <span class="labelBold">Created Date</span>
+        </div>
         <div class="col-md-4">@Model.User.CreatedDateUtc.ToLocalTime()</div>
     </div>
     @Html.AntiForgeryToken()

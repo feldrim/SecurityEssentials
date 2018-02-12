@@ -6,24 +6,23 @@ using SecurityEssentials.Acceptance.Tests.Web.Menus;
 
 namespace SecurityEssentials.Acceptance.Tests.Menus
 {
-	public class MenuBar
-	{
-		public HomeTab HomeTab { get; }
-		public AdminTab AdminTab { get; }
-		private IList<BaseTab> Tabs { get; set; }
+    public class MenuBar
+    {
+        public MenuBar(IWebDriver driver, Uri baseUri)
+        {
+            HomeTab = new HomeTab(driver, baseUri);
+            AdminTab = new AdminTab(driver, baseUri);
 
-		public MenuBar(IWebDriver driver, Uri baseUri)
-		{
-			HomeTab = new HomeTab(driver, baseUri);
-			AdminTab = new AdminTab(driver, baseUri);
+            Tabs = new List<BaseTab> {HomeTab, AdminTab};
+        }
 
-			Tabs = new List<BaseTab> {HomeTab, AdminTab};
-		}		
+        public HomeTab HomeTab { get; }
+        public AdminTab AdminTab { get; }
+        private IList<BaseTab> Tabs { get; }
 
-		public BaseTab GetTab(string tabTitle)
-		{
-			return Tabs.SingleOrDefault(t => t.Title == tabTitle);
-		}
-
-	}
+        public BaseTab GetTab(string tabTitle)
+        {
+            return Tabs.SingleOrDefault(t => t.Title == tabTitle);
+        }
+    }
 }

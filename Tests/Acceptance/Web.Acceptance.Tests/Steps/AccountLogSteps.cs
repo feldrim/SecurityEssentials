@@ -5,18 +5,15 @@ using TechTalk.SpecFlow.Assist;
 
 namespace SecurityEssentials.Acceptance.Tests.Web.Extensions
 {
-	[Binding]
-	public class AccountLogSteps
-	{
-
-		[Then(@"I am shown the following user logs:")]
-		public void ThenIAmShownTheFollowingUserLogs(Table table)
-		{
-			var page = ScenarioContext.Current.GetPage<AccountLogPage>();
-			var userLogsDisplayed = page.GetUserLogsDisplayed();
-			table.CompareToSet(userLogsDisplayed);
-		}
-
-
-	}
+    [Binding]
+    public class AccountLogSteps
+    {
+        [Then(@"I am shown the following user logs:")]
+        public void ThenIAmShownTheFollowingUserLogs(Table table)
+        {
+            var page = ScenarioContext.Current.GetPage<AccountLogPage>();
+            var userLogsDisplayed = page.GetUserLogsDisplayed();
+            table.CompareToSet(userLogsDisplayed);
+        }
+    }
 }
